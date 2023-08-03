@@ -88,7 +88,7 @@ public class Main {
 
         return newArray;
     }
-    private static void handleCommand(String input, CommandSender sender) {
+    public static void handleCommand(String input, CommandSender sender) {
         String[] tokens = input.split(" ");
         String commandLabel = tokens[0];
         String args = tokens.length > 1 ? tokens[1] : "";

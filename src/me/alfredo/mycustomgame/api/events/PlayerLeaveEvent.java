@@ -26,4 +26,13 @@ public class PlayerLeaveEvent implements Event {
     public EventType getEventType() {
         return EventType.PLAYER_LEAVE;
     }
+
+
+    @Override
+    public boolean isCancelled() {
+        return false;
+    }
+
+    @Override
+    public void setCancelled(boolean cancelled) {}
 }

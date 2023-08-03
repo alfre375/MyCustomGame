@@ -8,6 +8,7 @@ public class PlayerChatEvent implements Event {
 
     boolean wasCommand;
     CommandSender sender;
+    boolean cancelled = false;
     public PlayerChatEvent(String messageSent, boolean wasCommand, CommandSender sender) {
         this.messageSent = messageSent;
         this.wasCommand = wasCommand;
@@ -37,5 +38,15 @@ public class PlayerChatEvent implements Event {
     @Override
     public EventType getEventType() {
         return EventType.PLAYER_CHAT;
+    }
+
+    @Override
+    public boolean isCancelled() {
+        return cancelled;
+    }
+
+    @Override
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
     }
 }

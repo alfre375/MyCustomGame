@@ -247,6 +247,14 @@ public class PluginManager {
         listenerPluginMap.put(listener,plugin);
     }
     public void handleEvents(Event event) {
+        if (event.getEventType() == EventType.PLAYER_CHAT) {
+            PlayerChatEvent pce = (PlayerChatEvent) event;
+            if (pce.getMessageSent().startsWith("/")) {
+                String inputNoFSlash = pce.getMessageSent().substring(1,pce.getMessageSent().length());
+                Main.handleCommand(inputNoFSlash, pce.getSender());
+                return;
+            }
+        }
         for (Listener listener : listenerPluginMap.keySet()) {
             Class<?> listenerClass = listener.getClass();
             List<Method> methods = List.of(listenerClass.getDeclaredMethods());
@@ -259,6 +267,9 @@ public class PluginManager {
                         if (parameterTypes[0].isAssignableFrom(event.getClass())) {
                             try {
                                 method.invoke(listener, event);
+                                if (event.isCancelled()) {
+                                    return;
+                                }
                             } catch (IllegalAccessException | InvocationTargetException e) {
                                 e.printStackTrace();
                             }

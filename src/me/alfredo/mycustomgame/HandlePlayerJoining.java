@@ -99,6 +99,8 @@ public class HandlePlayerJoining {
 
         @Override
         public boolean isOp() {
+            if (!playerOpMap.containsKey(this))
+                return false;
             return playerOpMap.get(this);
         }
 
