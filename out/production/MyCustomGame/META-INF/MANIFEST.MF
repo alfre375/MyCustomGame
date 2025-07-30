@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: me.alfredo.mycustomgame.Main
+Main-Class: me.luna.mycustomgame.Main
 

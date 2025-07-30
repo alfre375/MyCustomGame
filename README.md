@@ -11,7 +11,7 @@ A "simple" game with an API for writing plugins
 7. In the java folder, make a new package under "me.your name.the name of the plugin". This will be where your code goes. This is what I mean by "Project folder" from here on
 8. Go to File, Project Structure, Libraries, and add the jar file of MyCustomGame.jar as a dependency
 9. Click apply, then OK
-10. In your project folder, create a Java class called main, then make it implement Plugin from me.alfredo.mycustomgame.api.Plugin
+10. In your project folder, create a Java class called main, then make it implement Plugin from api.me.luna.mycustomgame.Plugin
 11. Import the Plugin class
 12. Implement the methods
 13. In the getName() method, make it return the name of the plugin.
