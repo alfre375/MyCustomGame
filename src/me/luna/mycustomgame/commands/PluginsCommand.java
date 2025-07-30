@@ -2,7 +2,6 @@ package me.luna.mycustomgame.commands;
 
 import me.luna.mycustomgame.ChatColor;
 import me.luna.mycustomgame.Util;
-import me.alfredo.mycustomgame.api.*;
 import me.luna.mycustomgame.api.CommandSender;
 import me.luna.mycustomgame.api.Plugin;
 import me.luna.mycustomgame.api.PluginManager;

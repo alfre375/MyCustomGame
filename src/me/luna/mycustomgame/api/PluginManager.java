@@ -2,7 +2,6 @@ package me.luna.mycustomgame.api;
 
 import me.luna.mycustomgame.ChatColors;
 import me.luna.mycustomgame.Main;
-import me.alfredo.mycustomgame.api.events.*;
 import me.luna.mycustomgame.api.events.*;
 
 import java.io.File;

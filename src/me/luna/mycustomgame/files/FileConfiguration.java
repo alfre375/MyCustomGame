@@ -1,6 +1,6 @@
 package me.luna.mycustomgame.files;
 
-import me.alfredo.mycustomgame.*;
+import me.luna.mycustomgame.*;
 import me.luna.mycustomgame.ChatColors;
 import me.luna.mycustomgame.Location;
 import me.luna.mycustomgame.Main;
