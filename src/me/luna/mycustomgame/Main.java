@@ -1,6 +1,5 @@
 package me.luna.mycustomgame;
 
-import me.alfredo.mycustomgame.api.*;
 import me.luna.mycustomgame.api.*;
 import me.luna.mycustomgame.api.events.PlayerChatEvent;
 import me.luna.mycustomgame.commands.PluginsCommand;
@@ -20,7 +19,7 @@ public class Main {
 
         @Override
         public void executeCommand(String label, String[] args) {
-            List<String> tokens = Arrays.stream(args).toList();
+            List<String> tokens = new ArrayList<>(Arrays.stream(args).toList());
             tokens.add(0,label);
             handleCommand(util.mergeStringList((String[]) tokens.stream().toArray(), " "), this);
         }
@@ -102,9 +101,11 @@ public class Main {
             return;
         }
 
-        if (commandLabel == "") {
+        if (Objects.equals(commandLabel, "")) {
             return;
         }
+
+        PluginManager pm;
 
         switch (commandLabel) {
             case "stop":
@@ -122,7 +123,7 @@ public class Main {
                 System.out.println(sender instanceof Player);
                 break;
             case "reload", "rl":
-                PluginManager pm = new PluginManager();
+                pm = new PluginManager();
                 pm.unrecognizePlugins();
                 pm.loadPlugins();
                 break;
